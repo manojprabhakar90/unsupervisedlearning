@@ -1,5 +1,7 @@
 import pandas as pd
 import streamlit as st
+from sklearn.metrics.pairwise import cosine_similarity
+from scipy.sparse import csr_matrix
 
 def show_user_based_page():
 	st.title("User Based Recommendation System")
