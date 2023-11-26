@@ -3,7 +3,7 @@ import streamlit as st
 
 def show_movie_based_page():
 	st.title("User Based Recommendation System")
-	train_data = pd.read_csv("./Recommendation_data/train.csv")
+	train_data = pd.read_csv("train.csv")
 	user_movie_matrix = train_data.pivot(index='uID', columns='mID', values='rating').fillna(0)
 	movie_similarity = cosine_similarity(user_movie_matrix.T)
 	movie_similarity_df = pd.DataFrame(movie_similarity, index=user_movie_matrix.columns, columns=user_movie_matrix.columns)
