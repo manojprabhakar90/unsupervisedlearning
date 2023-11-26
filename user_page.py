@@ -24,6 +24,7 @@ def show_user_based_page():
 	    return top_movie_titles
 
 	user_id = st.number_input('User', min_value=1)  
-	recommendations = st.number_input('Number of Recommendations', min_value=1)  
-	recommended_movies = get_user_based_recommendations(user_id, user_similarity_df, user_movie_matrix,recommendations)
-	st.write('Top Recommendations : ', recommended_movies)
+	recommendations = st.number_input('Number of Recommendations', min_value=1)
+	if st.button('Get Recommendations'):
+		recommended_movies = get_user_based_recommendations(user_id, user_similarity_df, user_movie_matrix,recommendations)
+		st.write('Top Recommendations : ', recommended_movies)
