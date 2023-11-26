@@ -23,5 +23,5 @@ movielist = movies_data['title'].unique()
 moviename = st.selectbox("Movie Name", movielist)
 movienumber = movies_data[movies_data['title']=='moviename']
 recommendations = st.number_input('Number of Recommendations',min_value=1)  
-recommended_movies = get_movie_based_recommendations(movienumber, movie_similarity_df,recommendations)
+recommended_movies = show_movie_based_page.get_movie_based_recommendations(movienumber, movie_similarity_df,recommendations)
 st.write('Top Recommendations : ', recommended_movies)
