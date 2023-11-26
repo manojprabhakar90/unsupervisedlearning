@@ -6,6 +6,7 @@ from scipy.sparse import csr_matrix
 def show_user_based_page():
 	st.title("User Based Recommendation System")
 	train_data = pd.read_csv("train.csv")
+	movies_data = pd.read_Csv("movies.csv")
 	user_movie_matrix = train_data.pivot(index='uID', columns='mID', values='rating').fillna(0)
 	sparse_matrix = csr_matrix(user_movie_matrix.values)
 	user_similarity = cosine_similarity(sparse_matrix)
